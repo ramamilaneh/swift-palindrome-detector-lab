@@ -47,8 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return String(string.characters.reversed())
     }
     func stringIsPalindrome(string: String) ->Bool{
-        let separator = CharacterSet(charactersIn: "  , ; . : ! ? -  ")
-        let string1 = String(string.lowercased().characters).components(separatedBy: separator).joined()
+        let separator = CharacterSet.punctuationCharacters
+        let string1 = String(string.lowercased().characters).components(separatedBy: separator).joined().components(separatedBy: " ").joined()
         print(string1)
         if string1 == stringByReversingString(string: string1){
             return true
