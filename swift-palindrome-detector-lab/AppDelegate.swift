@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let result = stringIsPalindrome(string: "No sir! Away! A papaya war is on.")
+        print(result)
         return true
     }
 
@@ -40,7 +42,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    func stringByReversingString(string: String) ->String{
+        print(String(string.characters.reversed()))
+        return String(string.characters.reversed())
+    }
+    func stringIsPalindrome(string: String) ->Bool{
+        let separator = CharacterSet(charactersIn: "  , ; . : ! ? -  ")
+        let string1 = String(string.lowercased().characters).components(separatedBy: separator).joined()
+        print(string1)
+        if string1 == stringByReversingString(string: string1){
+            return true
+        }else{
+            return false
+        }
+    }
 }
 
